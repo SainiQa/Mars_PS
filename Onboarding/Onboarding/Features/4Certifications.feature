@@ -6,20 +6,20 @@ So that
 The people seeking for some skills can look into my details.
 
 @tag1
-Scenario:Add Certifications on profile page, with valid data.
+Scenario: Add Certificate with valid details on Profile Page 
 	Given I logged into Mars application successfully
-	When I added '<Certificate>','<Certificate From>' and '<Year>'
-	Then Certification record should be added successfully.
-	Examples: 
-	| Certificate					| Certificate from   |  Year  |
-	| Salesforce Administrator		| Salesforce		 |  2020  | 
+	When I add Certficate, Certificatefrom and Year
+	Then Certificate record should be successfully added on profile page
 
-Scenario:Update an existing Certification on profile page
+	
+   
+
+Scenario: Update an existing Certification on profile page
 	Given I logged into Mars application successfully
 	When I  update Certificate,Certificate from and the Year
 	Then Certification record should be updated and displayed on profile page 
 	
-Scenario:Delete an existing Certification on profile page
+Scenario: Delete an existing Certification on profile page
 	Given I logged into Mars application successfully
 	When I  delete an existing certification record
 	Then The record should be  deleted and should NOT be displayed in the list

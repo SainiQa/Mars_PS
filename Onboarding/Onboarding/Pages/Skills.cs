@@ -41,7 +41,10 @@ namespace Onboarding.Pages
         //Validate Skill
 
         public void GetSkills(IWebDriver driver)
+
         {
+            IWebElement SkillTab = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[1]/a[2]"));
+            SkillTab.Click();
             IWebElement addedSkill = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody/tr/td[1]"));
             IWebElement addedSkillLevel = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody/tr/td[2]"));
 
@@ -55,16 +58,21 @@ namespace Onboarding.Pages
     public void UpdateSkills(IWebDriver driver)
     {
 
-            Thread.Sleep(3000);
+            //Thread.Sleep(3000);
+            IWebElement SkillTab = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[1]/a[2]"));
+            SkillTab.Click();
+
             IWebElement EditSkillIcon = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody/tr/td[3]/span[1]/i"));
         EditSkillIcon.Click();
+            
 
-        IWebElement EditSkill = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody/tr/td[1]"));
-        EditSkill.Clear();
-        EditSkill.SendKeys("Dance");
+            IWebElement EditSkill = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody/tr/td/div/div[1]/input"));
+        EditSkill.Clear();   
+            EditSkill.SendKeys("Dance");
 
         SelectElement EditSkillLevel = new SelectElement(driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody/tr/td/div/div[2]/select")));
         EditSkillLevel.SelectByValue("Expert");
+            Thread.Sleep(2000); 
 
         IWebElement SkillUpdateButton = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody/tr/td/div/span/input[1]")); ;
         SkillUpdateButton.Click();
@@ -76,7 +84,9 @@ namespace Onboarding.Pages
 
         public void GetUpdateSkills(IWebDriver driver)
         {
-            Thread.Sleep(3000);
+            //Thread.Sleep(3000);
+            IWebElement SkillTab = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[1]/a[2]"));
+            SkillTab.Click();
             IWebElement updatedSkill = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody/tr/td[1]"));
             IWebElement updatedLevel = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody/tr/td[2]"));
 
@@ -87,10 +97,11 @@ namespace Onboarding.Pages
         //DELETE SKILL
         public void DeleteSkills(IWebDriver driver)
 
-        { 
+        {
 
-            //Thread.Sleep(2000);
-
+            Thread.Sleep(2000);
+            IWebElement SkillTab = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[1]/a[2]"));
+            SkillTab.Click();
             IWebElement DeleteSkillIcon = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody/tr/td[3]/span[2]/i"));
             DeleteSkillIcon.Click();
         }
@@ -98,7 +109,9 @@ namespace Onboarding.Pages
         //Validate Deleted Skill
 
         public void GetDeleteSkills(IWebDriver driver)
-        {                                                           
+        {
+            IWebElement SkillTab = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[1]/a[2]"));
+            SkillTab.Click();
             IWebElement deletedSkill = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody/tr/td[1]"));
             IWebElement deletedLevel = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody/tr/td[2]"));
 

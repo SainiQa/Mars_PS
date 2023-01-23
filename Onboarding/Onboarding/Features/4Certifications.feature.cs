@@ -76,23 +76,14 @@ namespace Onboarding.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Add Certifications on profile page, with valid data.")]
+        [NUnit.Framework.DescriptionAttribute("Add Certificate with valid details on Profile Page")]
         [NUnit.Framework.CategoryAttribute("tag1")]
-        [NUnit.Framework.TestCaseAttribute("Salesforce Administrator", "Salesforce", "2020", null)]
-        public void AddCertificationsOnProfilePageWithValidData_(string certificate, string certificateFrom, string year, string[] exampleTags)
+        public void AddCertificateWithValidDetailsOnProfilePage()
         {
-            string[] @__tags = new string[] {
+            string[] tagsOfScenario = new string[] {
                     "tag1"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Certificate", certificate);
-            argumentsOfScenario.Add("Certificate from", certificateFrom);
-            argumentsOfScenario.Add("Year", year);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add Certifications on profile page, with valid data.", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add Certificate with valid details on Profile Page", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 9
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -107,10 +98,10 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("I logged into Mars application successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 11
- testRunner.When(string.Format("I added \'{0}\',\'<Certificate From>\' and \'{1}\'", certificate, year), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I add Certficate, Certificatefrom and Year", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 12
- testRunner.Then("Certification record should be added successfully.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Certificate record should be successfully added on profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

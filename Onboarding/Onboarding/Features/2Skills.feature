@@ -6,7 +6,7 @@ So that
 The people seeking for some skills can look into my details.
 
 @tag1
-Scenario: Add Skills on profile page
+Scenario Outline: Add Skills on profile page
 	Given I logged into Mars application successfully
 	When I add '<skill>' and '<level>' 
 	Then Added record should be displayed in skill list under skill tab on profile page
